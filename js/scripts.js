@@ -21,6 +21,7 @@ $(document).ready(function(){
   var player1 = {};
   var player2 = {};
   var turn = 1;
+
   $(".start-game").click(function(event){
     var player1 = new Player("x");
     var player2 = new Player("y");
