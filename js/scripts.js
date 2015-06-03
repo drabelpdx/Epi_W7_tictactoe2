@@ -18,15 +18,16 @@ Space.prototype.markBy = function(player) {
 
 
 $(document).ready(function(){
-  var player1 = {};
-  var player2 = {};
+  var player1;
+  var player2;
   var turn = 1;
 
   $(".start-game").click(function(event){
-    var player1 = new Player("x");
-    var player2 = new Player("y");
+     player1 = new Player("x");
+     player2 = new Player("o");
   console.log(player1);
   console.log(player2);
+
 });
 
   $(".space").click(function(event){
@@ -39,13 +40,19 @@ $(document).ready(function(){
     if(turn % 2 === 0) {
       $(this).html("<span class='inner'>x</span>");
       newSpace.markedby = "x";
-      console.log(newSpace.markedby);
+      newSpace.markBy(player1);
+      //console.log(newSpace.markedby);
+      alert(player1.playedSquare);
     }
     else {
       $(this).html("<span class='inner'>o</span>");
       newSpace.markedby = "o";
-      console.log(newSpace.markedby);
+      newSpace.markBy(player2);
+      //console.log(newSpace.markedby);
+      alert(player2.playedSquare);
     }
+
+
   });
 
 
