@@ -59,8 +59,6 @@ $(document).ready(function(){
           }
 
 
-
-
     else {
       $(this).html("<span class='inner'>o</span>");
       newSpace.markedby = "o";
@@ -82,6 +80,9 @@ $(document).ready(function(){
 
     }
 
+    if(player1.playedSquares.length === 5 && player2.playedSquares.length === 4) {
+      alert("it's a tie!!");
+    };
 
   });
 
