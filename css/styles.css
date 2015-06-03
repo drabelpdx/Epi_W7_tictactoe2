@@ -1,8 +1,14 @@
+body {
+  font-family: 'Reenie Beanie', cursive;
+  font-size:3em;
+}
+
 .space {
   border: 1px brown solid;
   width: 120px;
   height: 120px;
   background-color: lightgreen;
+
 }
 #board {
 margin-left:15px;
@@ -10,10 +16,11 @@ margin-left:15px;
 
 h1 {
   text-align: center;
+  font-size: 75px;
 }
 
 .start-game {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   background-color:lightgrey;
   border-radius: 3px;
@@ -29,9 +36,13 @@ h1 {
 }
 
 .inner {
-  font-size: 70px;
+  font-size: 80px;
   margin-left:40px;
 }
 td {
   align: center;
+}
+.messages {
+  font-size:60px;
+
 }

@@ -38,7 +38,7 @@ $(document).ready(function(){
     console.log(newSpace);
 
     if(turn % 2 === 0) {
-      $(this).html("<span class='inner'>x</span>");
+      $(this).html("<span class='inner'>X</span>");
       newSpace.markedby = "x";
       newSpace.markBy(player1);
 
@@ -53,14 +53,14 @@ $(document).ready(function(){
             for(var j = 0; j < winCombos.length; j++) {
                 console.log(containsAll(winCombos[j],player1.playedSquares));
                 if(containsAll(winCombos[j],player1.playedSquares)) {
-                  alert("player 1 wins");
+                  $(".messages").text("Player 1 wins!!");
                 }
             }
           }
 
 
     else {
-      $(this).html("<span class='inner'>o</span>");
+      $(this).html("<span class='inner'>O</span>");
       newSpace.markedby = "o";
       newSpace.markBy(player2);
       function containsAll(a, b){
@@ -74,14 +74,14 @@ $(document).ready(function(){
         for(var j = 0; j < winCombos.length; j++) {
             console.log(containsAll(winCombos[j],player1.playedSquares));
             if(containsAll(winCombos[j],player2.playedSquares)) {
-              alert("player 2 wins");
+              $(".messages").text("Player 2 wins!!");
             }
         }
 
     }
 
     if(player1.playedSquares.length === 5 && player2.playedSquares.length === 4) {
-      alert("it's a tie!!");
+      $(".messages").text("It's a tie!!!Boo hiss!!!");
     };
 
   });
