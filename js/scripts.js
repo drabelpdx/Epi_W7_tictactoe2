@@ -25,8 +25,8 @@ $(document).ready(function(){
   $(".start-game").click(function(event){
      player1 = new Player("x");
      player2 = new Player("o");
-  console.log(player1);
-  console.log(player2);
+
+
 
 });
 
@@ -35,9 +35,10 @@ $(document).ready(function(){
     turn += 1;
 
     var newSpace = new Space($(this).attr("id"));
-    console.log(newSpace);
+
 
     if(turn % 2 === 0) {
+
       $(this).html("<span class='inner'>X</span>");
       newSpace.markedby = "x";
       newSpace.markBy(player1);
@@ -56,8 +57,8 @@ $(document).ready(function(){
                   $(".messages").text("Player 1 wins!!");
                 }
             }
-          }
 
+        }
 
     else {
       $(this).html("<span class='inner'>O</span>");
@@ -81,10 +82,13 @@ $(document).ready(function(){
     }
 
     if(player1.playedSquares.length === 5 && player2.playedSquares.length === 4) {
-      $(".messages").text("It's a tie!!!Boo hiss!!!");
+      $(".messages").text("It's a tie!!");
     };
 
   });
-
+  $(".end-game").click(function(event){
+    event.preventDefault();
+    document.location.reload(true);
+  });
 
 });

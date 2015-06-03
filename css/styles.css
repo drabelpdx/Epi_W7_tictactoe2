@@ -19,7 +19,7 @@ h1 {
   font-size: 75px;
 }
 
-.start-game {
+.start-game, .end-game {
   font-size: 24px;
   font-weight: bold;
   background-color:lightgrey;
@@ -28,7 +28,7 @@ h1 {
   margin-left: 129px;
 
 }
-.start-game:hover {
+.start-game:hover, .end-game:hover{
   text-transform: underline;
   color: aqua;
 
@@ -45,4 +45,7 @@ td {
 .messages {
   font-size:60px;
 
+}
+.btn-holder {
+  width:33%;
 }
