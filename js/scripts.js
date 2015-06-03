@@ -1,6 +1,6 @@
 function Player(mark) {
   this.mark = mark;
-  this.playedSquare = [];
+  this.playedSquares = [];
 }
 
 
@@ -13,7 +13,7 @@ function Space(coordinate) {
 
 Space.prototype.markBy = function(player) {
   this.markedby = player;
-  player.playedSquare.push(this.coordinate);
+  player.playedSquares.push(this.coordinate);
 }
 
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
   var player1;
   var player2;
   var turn = 1;
-
+  var winCombos = [['1','2','3'], ['4','5','6'], ['7','8','9'], ['1','4','7'], ['2','5','8'], ['3','6','9'], ['1','5','9'], ['3','5','7']];
   $(".start-game").click(function(event){
      player1 = new Player("x");
      player2 = new Player("o");
@@ -41,15 +41,32 @@ $(document).ready(function(){
       $(this).html("<span class='inner'>x</span>");
       newSpace.markedby = "x";
       newSpace.markBy(player1);
-      //console.log(newSpace.markedby);
-      alert(player1.playedSquare);
-    }
+
+          function containsAll(a, b){
+            var winCombos = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
+
+            for(var i = 0 , len = a.length; i < len; i++){
+               if($.inArray(a[i], b) == -1) return false;
+            }
+               return true;
+            }
+            for(var j = 0; j < winCombos.length; j++) {
+                console.log(containsAll(winCombos[j],player1.playedSquares));
+                if(containsAll(winCombos[j],player1.playedSquares)) {
+                  alert("player 1 wins");
+                }
+              }
+          }
+
+
+
+
     else {
       $(this).html("<span class='inner'>o</span>");
       newSpace.markedby = "o";
       newSpace.markBy(player2);
       //console.log(newSpace.markedby);
-      alert(player2.playedSquare);
+      alert(player2.playedSquares);
     }
 
 
