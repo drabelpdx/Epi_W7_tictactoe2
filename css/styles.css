@@ -1,0 +1,13 @@
+.space {
+  border: 1px brown solid;
+  width: 120px;
+  height: 120px;
+  background-color: lightgreen;
+}
+#board {
+margin-left:15px;
+}
+
+h1 {
+  text-align: center;
+}
