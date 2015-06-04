@@ -1,6 +1,7 @@
 body {
   font-family: 'Reenie Beanie', cursive;
   font-size:3em;
+  align: center;
 }
 
 .space {
@@ -8,10 +9,11 @@ body {
   width: 120px;
   height: 120px;
   background-color: lightgreen;
-
 }
+
 #board {
-margin-left:15px;
+ margin-left:15px;
+  align: center;
 }
 
 h1 {
@@ -26,26 +28,27 @@ h1 {
   border-radius: 3px;
   margin-top: 12px;
   margin-left: 129px;
-
 }
+
 .start-game:hover, .end-game:hover{
   text-transform: underline;
   color: aqua;
-
-
 }
 
 .inner {
   font-size: 80px;
   margin-left:40px;
 }
+
 td {
   align: center;
 }
+
 .messages {
   font-size:60px;
-
+  display: none;
 }
+
 .btn-holder {
   width:33%;
 }

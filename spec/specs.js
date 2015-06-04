@@ -22,6 +22,6 @@ describe('Space', function() {
     var testPlayer = new Player("x");
     var testSpace = new Space("3");
     testSpace.markBy(testPlayer);
-    expect(testPlayer.playedSquare).to.eql(["3"]);
+    expect(testPlayer.playedSquares).to.eql(["3"]);
   });
 });
