@@ -21,6 +21,8 @@ Space.prototype.markBy = function(player) {
 $(document).ready(function(){
   var player1;
   var player2;
+  var play1win = false;
+  var play2win = false;
   var player1score = 0, player2score = 0;
   var winCombos = [['1','2','3'], ['4','5','6'], ['7','8','9'], ['1','4','7'], ['2','5','8'], ['3','6','9'], ['1','5','9'], ['3','5','7']];
 
@@ -33,10 +35,9 @@ $(document).ready(function(){
 
     $(".space").click(function(e){
       e.preventDefault();
-      turn += 1;
       var newSpace = new Space($(this).attr("id"));
 
-      if(turn % 2 === 0) {
+      if(turn % 2 !== 0) {
 
 
         $(this).html("<span class='inner'>X</span>");
@@ -51,6 +52,7 @@ $(document).ready(function(){
                return false;
               }
             }
+            play1win = true;
             return true;
         }
 
@@ -63,9 +65,7 @@ $(document).ready(function(){
               $('.space').off('click');
             }
         }
-      }
-
-      else {
+      } else {
         $(this).html("<span class='inner'>O</span>");
         $(this).off('click');
 
@@ -77,6 +77,7 @@ $(document).ready(function(){
                return false;
              }
           }
+             play2win = true;
              return true;
           }
           for(var j = 0; j < winCombos.length; j++) {
@@ -89,23 +90,20 @@ $(document).ready(function(){
           }
       }
 
-      if(player1.playedSquares.length === 5 && player2.playedSquares.length === 4) {
+      if (play1win === false && play2win === false && turn === 9) {
         $(".messages").text("It's a tie!!").show();
-      };
+      }
 
-
+      turn += 1;
 
       $(".end-game").click(function(e){
         e.preventDefault();
         $("#board td").children().remove("span");
         $(".messages").hide();
 
-        // $("#board td").children().on('click');
-
         player1.wipe();
         player2.wipe();
 
-        //document.location.reload(true);
       });
     });
   });
